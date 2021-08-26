@@ -85,11 +85,16 @@ header h1 {
 .sub-topic {
     margin: auto;
     max-width: 900px;
+    
 }
 
 .sub-topic h2 {
-    text-align: left;
-    margin: 10px 0;
+    
+    margin: 10px auto;
+}
+
+.sub-topic-heading{
+    text-align: center;
 }
 
 .sub-topic p {
