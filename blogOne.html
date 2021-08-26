@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog One | Mohammed</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="blogOne.css">
+    <script src="https://kit.fontawesome.com/c199706984.js" crossorigin="anonymous"></script>
+
+    </head>
+
+<body>
+    <header>
+        <nav class="navigation container">
+            <div class="nav-brand">#IAMDEVELOPER</div>
+            <ul class="nav-pills list-non-bullet">
+                <li class="list-item-inline">
+                    <a href="/"><i class="fas fa-home"></i> home</a>
+    
+                </li>
+                <li class="list-item-inline">
+                    <a href="/projects.html"><i class="fas fa-laptop"></i> projects</a>
+                </li>
+                <li class="list-item-inline">
+                    <a class="link-active" href="/blogs.html"><i class="fab fa-blogger-b"></i> blog</a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="heading">Do you know which CSS styling has highest priority?</h1>
+        <div class="img-div">
+            <img src="images/css.jpg">
+        </div>
+    </header>
+
+    <main>
+
+        <div class="sub-topic">
+            <h2>Introduction</h2>
+            <p>Many beginners and even intermediate developers have confusion about the priority of the CSS styling.
+                Trust me today after reading this blog you'll be having a solid knowledge on CSS styling priority
+            </p>
+            <p>
+                Before diving deep let's see what all kind of styling is there in CSS. </p>
+            <ul class="list">
+                <li>Type selector</li>
+                <li>Class selector</li>
+                <li>Internal CSS</li>
+                <li>External CSS</li>
+                <li>Id selector</li>
+                <li>Inline style attribute</li>
+
+
+            </ul>
+
+        </div>
+        <div class="sub-topic">
+            <h2>Type selector</h2>
+
+            <code>
+                <small>CSS</small>
+                <span class="type-selector">p</span> { <span class="prop-selector">color</span>: blue ; <span
+                    class="prop-selector">font-size</span>:16px; }
+                <br>
+                <span class="type-selector">h1</span> { <span class="prop-selector">background-color</span> : yellow ;
+                <span class="prop-selector">margin</span>: 5px;}
+            </code>
+            <p>In element type selector , we select the elements by their html tags and apply styling to them as shown
+                in above example.</p>
+            <p>Type selector has the least priority in CSS styling</p>
+
+        </div>
+
+
+
+        <div class="sub-topic">
+            <h2>Class Selector</h2>
+
+            <code>
+                <small>HTML</small>
+                <span class="prop-selector">&ltp</span> <span class="type-selector">class</span>="para-class color-blue
+                mb"<span class="prop-selector">></span>This is a sample <span class="prop-selector">&lt/p&gt</span>
+            </code>
+
+            <code>
+                <small>CSS</small>
+                <span class="type-selector">.para-class</span> {
+                <span class="prop-selector">color</span> : red;
+                <span class="prop-selector">font-size</span> : 16px;
+                }
+                <br>
+                <span class="type-selector">.color-blue</span> {
+                <span class="prop-selector">color</span>: blue;
+                }
+                <br>
+                <span class="type-selector">.mb</span> {
+                <span class="prop-selector">margin-bottom</span> : 10px;
+                }
+            </code>
+            <p>A html element can have multiple classes and the styling of the last class overrides the pre-existing
+                style if there is a clash.</p>
+            <p>In the above example the "color-blue" class overrides the font color red of "para-class" and the
+                remaining properties remains unchanged.</p>
+            <p>Class selector has higher priority than type selector</p>
+
+        </div>
+
+        <div class="sub-topic">
+            <h2>Internal CSS</h2>
+
+            <code>
+                <small>HTML</small>
+                <span class="prop-selector">&ltp</span> <span class="type-selector">class</span>="para-class color-blue
+                mb"<span class="prop-selector">></span>This is a sample <span class="prop-selector">&lt/p&gt</span>
+            </code>
+
+            <code>
+                <small>CSS</small>
+                <span class="prop-selector"> &ltstyle&gt</span>
+                <br>
+                &nbsp <span class="type-selector">.mb</span>{
+                <span class="prop-selector">margin-bottom</span> : 10px;
+                }
+                <br>
+                &nbsp <span class="type-selector">.para-class</span>{
+                <span class="prop-selector">color</span> : red;
+                <span class="prop-selector">font-size</span>: 16px;
+                }
+                <br>
+                <span class="prop-selector"> &lt/style&gt</span>
+            </code>
+            <p>An internal css is written by inserting the style tag inside the head tag of the html file.The styling
+                properties of html elements are written here.</p>
+        </div>
+
+        <div class="sub-topic">
+            <h2>External CSS</h2>
+
+            <code>
+                <small>HTML</small>
+                <span class="prop-selector">&ltlink&gt</span> <span class="type-selector">rel</span>="stylesheet" <span
+                    class="type-selector">href</span>="style.css" <span class="prop-selector">&lt/link&gt</span>
+            </code>
+
+            <p>In external css, we code all the styling properties in a seperate external file and link it with the html
+                file by using link tag and including the source of the external css in href attribute</p>
+        </div>
+
+        <div class="sub-topic">
+            <h2>Id selector</h2>
+
+            <code>
+                <small>HTML</small>
+                <span class="prop-selector">&ltp</span> <span class="type-selector">id</span>="para"<span
+                    class="prop-selector">></span>This is a sample <span class="prop-selector">&lt/p&gt</span>
+            </code>
+
+            <code>
+                <small>CSS</small>
+                <span class="type-selector">#para</span>{
+                <span class="prop-selector">color</span>: red;
+                <span class="prop-selector">font-size</span>: 16px;
+                }
+            </code>
+
+            <p>
+                In id selector, we select the element by their id and apply styling to them either in internal or
+                external CSS.While selecting ID we have to insert hash(#) tag before the ID's name.Html elements should
+                have unique ID . ID selector have
+                second highest priority
+            </p>
+        </div>
+
+        <div class="sub-topic">
+            <h2>Inline style attribute</h2>
+
+
+            <code>
+                <small>HTML</small>
+                <span class="prop-selector">&ltp</span> <span class="type-selector">style</span>="<span
+                    class="prop-selector">color</span>: red"<span class="prop-selector">></span>This is a sample <span
+                    class="prop-selector">&lt/p&gt</span>
+            </code>
+
+            <p>Inline style attributes are those styling where the css properties are written as attirbutes in HTML
+                elements. These styling has the highest priority.</p>
+        </div>
+
+        <div class="sub-topic">
+            <h2>Conclusion</h2>
+            <p>The priority of external and internal css depends on the order which they appear.</p>
+            <p>If the style tag comes after the link tag then the internal css overrides the styling of external css and vice-versa.</p>
+            <h4>CSS styling priority</h4>
+            <p>Inline CSS >> Id Selector >> Class Selector >> External and Internal CSS >> Type Selector</p>
+            <p>Finally , we know which kind of CSS styling has what kind of priority.</p>
+
+        </div>
+
+        <footer class="footer">
+            <div class="footer-header">Reach to me on social media</div>
+            <ul class="social-links list-non-bullet">
+                <li class="list-item-inline"> <a target="_blank" target="_blank" class="link" href="https://github.com/mohammed-sas"> <i class="fab fa-github"></i> GitHub</a> </li>
+                <li class="list-item-inline"> <a class="link" href="https://www.linkedin.com/in/mohammed-ashraf-ba0a11133/"><i class="fab fa-linkedin"></i> LinkedIn </a> </li>
+                
+            </ul>
+        </footer>
+
+
+
+
+    </main>
+</body>
+
+</html>
