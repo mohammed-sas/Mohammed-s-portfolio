@@ -85,6 +85,7 @@ header h1 {
 .sub-topic {
     margin: auto;
     max-width: 900px;
+    text-justify:inter-word;
     
 }
 
