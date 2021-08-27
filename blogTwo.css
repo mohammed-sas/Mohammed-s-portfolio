@@ -1,0 +1,11 @@
+.conclusion-table{
+    margin: 10px auto;
+    border: 2px solid black;
+    
+
+}
+
+.conclusion-table td,th{
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+}

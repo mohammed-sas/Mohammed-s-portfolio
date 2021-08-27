@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting | Mohammed</title>
+    <script src="https://kit.fontawesome.com/c199706984.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blogOne.css">
+    <link rel="stylesheet" href="blogTwo.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navigation container">
+            <div class="nav-brand">#IAMDEVELOPER</div>
+            <ul class="nav-pills list-non-bullet">
+                <li class="list-item-inline">
+                    <a href="/"><i class="fas fa-home"></i> home</a>
+    
+                </li>
+                <li class="list-item-inline">
+                    <a href="/projects.html"><i class="fas fa-laptop"></i> projects</a>
+                </li>
+                <li class="list-item-inline">
+                    <a class="link-active" href="/blogs.html"><i class="fab fa-blogger-b"></i> blog</a>
+                </li>
+            </ul>
+        </nav>
+    
+        <h1 class="heading">Hoisting in Javascript</h1>
+        <div class="img-div">
+            <img src="images/js.png">
+        </div>
+    </header>
+
+    <main>
+        <div class="sub-topic">
+            <h2 class="sub-topic-heading">Introduction</h2>
+            <p>Hoisting is a magical thing in Javascript. Having a thorough understanding of hoisting under the hood
+                gives us a edge on understanding the code and debugging.A lots of developers do not know what happens
+                underneath during hoisting. Let's see how hoisting works.</p>
+            <p>
+                Let us take a look on what are hoisted in Javascript. The following are hoisted in Javascript
+            </p>
+            <ul class="list">
+                <li>var</li>
+                <li>functions</li>
+                <li>let</li>
+                <li>const</li>
+            </ul>
+
+        </div>
+
+        <div class="sub-topic">
+            <h2 class="sub-topic-heading">Variable "var"</h2>
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">var</span> <span class="type-selector">a</span> = 10;
+            </code>
+            <p>We could declare a variable in Javascript using the keyword var.</p>
+            <p>What do you think happens if we console log the variable "a" before it's declaration.</p>
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">console.log(</span><span class="type-selector">a</span><span
+                    class="prop-selector">)</span>;
+                <br>
+                <span class="prop-selector">var</span> <span class="type-selector">a</span> = 10;
+            </code>
+            <p>Unlike other programming languages like Java,C++, etc., the Javascript doesn't throw an error. </p>
+            <code>
+                <small>Console</small>
+                undefined
+            </code>
+            <p>Here it says that the value of "a" is "undefined".The Javascript engine knows that there exist a variable
+                "a" but currently the value for "a" is not initialized hence it is "undefined" </p>
+            <p>You might ask that "a" has been assigned " 10" but why console shows "undefined" for "a".Look the below
+                snippet to understand the magic of hoisting</p>
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">var</span> <span class="type-selector">a</span>;
+                <br>
+                <span class="prop-selector">console.log(</span><span class="type-selector">a</span><span
+                    class="prop-selector">)</span>;
+                <br>
+                <span class="type-selector">a</span> = 10;
+            </code>
+            <p>What happens is before the execution of the code, the Javascript engine reads the code line by line and
+                brings all the declarations of variables to the top/ starting part of the code. Hence when we console
+                log the variable before it's initialization we get value as "undefined". </p>
+
+        </div>
+
+        <div class="sub-topic">
+            <h2 class="sub-topic-heading">Function</h2>
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">console.log(</span><span class="type-selector">add</span>(10,5)<span
+                    class="prop-selector">)</span>;
+                <br>
+                <span class="prop-selector">function</span> <span class="type-selector">add</span>(a,b){
+                <br> <span class="prop-selector">return</span> a+b;
+                <br>
+                }
+            </code>
+            <p>Hoisting for the functions happens in similar way as the "var" are hoisted. The Javascript engine reads
+                the code line by line and brings all the function declarations to the top.</p>
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">function</span> <span class="type-selector">add</span>(a,b){
+                <br> <span class="prop-selector">return</span> a+b;
+                <br>
+                }
+                <br>
+                <span class="prop-selector">console.log(</span><span class="type-selector">add</span>(10,5)<span
+                    class="prop-selector">)</span>;
+                <br>
+
+            </code>
+            <code>
+                <small>Console</small>
+                15
+            </code>
+        </div>
+
+        <div class="sub-topic">
+            <h2 class="sub-topic-heading">Variables "let" and "const"</h2>
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">console.log(</span>a,pi<span class="prop-selector">)</span>; <br>
+                <span class="prop-selector">let</span><span class="type-selector"> a</span> = "hello";<br>
+                <span class="prop-selector">const</span> <span class="type-selector">pi</span> = 3.14;
+            </code>
+
+            <code>
+                <small>Console</small>
+                Cannot access 'a' before initialization
+            </code>
+
+            <p>Variables "let" and "const" are hoisted in Javascript but as you expect , it does not produce "undefined"
+                in console as it did for "var" variable hoisting.</p>
+            <p>The reason is though "let" and "const" are hoisted but they are not initialized with value "undefined".
+            </p>
+            <p>Accessing values before initialization results in reference error.These variables are said to be in
+                Temporal Dead Zone. It's the zone that exist from the hoisting of "let" and "const" till the
+                initialization of "let" and "const" variables.</p>
+            <p>We could only access the values of "let" and "const" only when their line of initialization has been
+                excuted.</p>
+
+            <code>
+                <small>Javascript</small>
+                <span class="prop-selector">let</span><span class="type-selector"> a</span> = "hello";<br>
+                <span class="prop-selector">const</span> <span class="type-selector">pi</span> = 3.14;
+                <br>
+                <span class="prop-selector">console.log(</span>a,pi<span class="prop-selector">)</span>;
+
+            </code>
+
+            <code>
+                <small>Console</small>
+                "hello" 3.14
+            </code>
+
+            <p></p>
+
+
+        </div>
+
+        <div class="sub-topic">
+            <h2 class="sub-topic-heading">Conclusion</h2>
+            <p>We have seen with detailed examples on how hoisting happens for var, functions, let and const.And what
+                happens we access let and const in their temporal dead zone.</p>
+            <p>Table showing values of variables before initialization after hoisting.</p>
+            <table class="conclusion-table">
+                <tr>
+                    <th>Variables</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>var</td>
+                    <td>undefined</td>
+                </tr>
+                <tr>
+                    <td>let</td>
+                    <td>reference error</td>
+                </tr>
+                <tr>
+                    <td>const</td>
+                    <td>reference error</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-header">Reach to me on social media</div>
+        <ul class="social-links list-non-bullet">
+            <li class="list-item-inline"> <a target="_blank" target="_blank" class="link" href="https://github.com/mohammed-sas"> <i class="fab fa-github"></i> GitHub</a> </li>
+            <li class="list-item-inline"> <a class="link" href="https://www.linkedin.com/in/mohammed-ashraf-ba0a11133/"><i class="fab fa-linkedin"></i> LinkedIn </a> </li>
+            
+        </ul>
+    </footer>
+
+</body>
+
+</html>
