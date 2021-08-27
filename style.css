@@ -4,7 +4,7 @@
     --primary-color:
         #6EE7B7;
     --dark-grey: #6B7280;
-    --off-white:#F3F4F6;
+    --off-white:#ECFDF5;
 }
 
 body {
@@ -50,6 +50,17 @@ hr {
 .list-non-bullet {
     list-style: none;
 }
+
+.tech-list{
+    margin: auto;
+    max-width: 200px;
+    
+}
+.tech-list i{
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+
 
 .list-item-inline {
     display: inline;
